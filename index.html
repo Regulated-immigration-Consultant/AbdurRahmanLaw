@@ -15,6 +15,121 @@
         background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(224, 231, 255, 0.9) 100%), 
                     url('https://uploads.onecompiler.io/44qwauvjy/44qxghhz8/15939.gif') center/cover no-repeat;
     }
+       /* 📌 Custom Styles for Footer */
+    .custom-footer {
+        background-color: #0C0100;
+        color: #FFFFFF;
+        padding-top: 3rem;
+        padding-bottom: 5rem; /* ফুটার ইমেজের জন্য কিছুটা বাড়তি স্পেস */
+        border-top: 1px solid #1e293b;
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .footer-title {
+        color: #FFFFFF;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        position: relative;
+    }
+
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 35px;
+        height: 2px;
+        background-color: #FA0700;
+        border-radius: 2px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 0.75rem;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .footer-links a {
+        color: #FFFFFF;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+        color: #00B0FF;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #1e293b;
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        text-align: center;
+        font-size: 0.75rem;
+        color: #FFFFFF;
+    }
+
+    /* 💬 Floating Live Chat Pop-up Button Animation */
+    @keyframes chatBounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
+    @keyframes chatGlow {
+        0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+        70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .live-chat-popup {
+        position: fixed;
+        bottom: 30px;
+        right: 25px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        animation: chatBounce 3s infinite ease-in-out, chatGlow 2s infinite;
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .live-chat-popup:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #059669, #047857);
+    }
+
+    .chat-status-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #a7f3d0;
+        border-radius: 50%;
+        display: inline-block;
+    }
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -330,8 +445,94 @@ alt="Showcase Image Banner" style="pointer-events: none;" ondragstart="return fa
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-        © 2026 College of Immigration and Citizenship Consultants - Abdur Rahman. All rights reserved.
+    <!-- 💬 Floating Pop-up Live Chat Button (আপনার লিংকটি href-এ বসাবেন) -->
+<a href="https://wa.me/16722844386" target="_blank" class="live-chat-popup" id="liveChatBtn">
+    <span class="chat-status-dot"></span>
+    <i class="fa-solid fa-comments"></i>
+    <span>Live Chat</span>
+</a>
+
+<!-- 📌 Customized Footer Section -->
+<footer class="custom-footer">
+    <div class="footer-container">
+        
+        <!-- Column 0: About & Logo Demo -->
+        <div>
+            <img src="https://uploads.onecompiler.io/457dquqjw/1793219829152/32692.png"
+          alt="Showcase Image Banner" style="pointer-events: none;" ondragstart="return false;" width="100%">
+          <h3>
+           <i class="fa-brands fa-asymmetrik fa-fade"></i>
+           Md. Abdur Rahman (RCIC)</h3>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8;">
+               is a Regulated Canadian Immigration Consultant (RCIC) based in Toronto, Ontario, and Bangladesh.
+            </p>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #94a3b8;">
+<i class="fa-solid fa-check fa-beat-fade" style="color: rgb(255, 0, 0);"></i>
+                He is also a member of the Canadian Association of Professional Immigration Consultants (CAPIC) AB Rahman,
+            </p>
+        </div>
+
+        <!-- Column 1: Quick Links -->
+        <div>
+            <h4 class="footer-title">Immigration Pathways</h4>
+            <ul class="footer-links">
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Contact</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">About Us</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">immigration</a></li>
+                   <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Privacy Policy</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        
+        <!-- Column 2: Quick Links -->
+        <div>
+            <h4 class="footer-title">Consultant Services:</h4>
+            <ul class="footer-links">
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Express Entry</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Permanent Residency (PR) Applications</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Work Visas</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Temporary Residence Permits</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Family Sponsorship and Citizenship Applications</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Individual profile Assessment and documentation Guidance</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Student Permits</a></li>
+                <li><i class="fa-solid fa-angle-right" style="color: #3b82f6;"></i> <a href="#">Visitor Visa</a></li>
+            </ul>
+        </div>
+        
+       <!-- Column 3: Contact Info -->
+        <div>
+            <h4 class="footer-title">Contact Information</h4>
+            <ul class="footer-links">
+                <li><i class="fa-solid fa-id-card" style="color: #60a5fa;"></i> Consultant ID: #R708023/500819</li>
+                <li><i class="fa-brands fa-whatsapp" style="color: #34d399;"></i> WhatsApp: +1 672 284 4386</li>
+                <li><i class="fa-solid fa-comment-dots" style="color: #38bdf8;"></i> IMO: +1 365 395 3775</li>
+                <li><i class="fa-solid fa-location-dot" style="color: #f87171;"></i> Vienna, ON NOJ 1ZO, Canada, Downtown Toronto, Ontario, Canada</li>
+            </ul>
+        </div>
+        
+
+        <!-- Column 4: Contact Info -->
+        <div>
+            <h4 class="footer-title">Canada Immigration Network</h4>
+            <ul class="footer-links">
+                <li><i class="fa-solid fa-check" style="color: #60a5fa;"></i> AbImmigration.cic.ca</li>
+                <li><i class="fa-solid fa-check" style="color: #34d399;"></i> CICNews.com</li>
+                <li><i class="fa-solid fa-check" style="color: #38bdf8;"></i> Canadian Immigration Forum</li>
+                <li><i class="fa-solid fa-check" style="color: #f87171;"></i> Canadian Immigration News</li>
+                <li><i class="fa-solid fa-check" style="color: #f87171;"></i> CanadaVisa News Team</li>
+            </ul>
+        </div>
+
+    </div>
+    <img src="https://uploads.onecompiler.io/457j9zdsw/1793223069842/32701.png"
+    alt="Showcase Image Banner" style="pointer-events: none;" ondragstart="false" width="100%">
+        <!-- Column 2: Quick Links -->
+        <div>
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+        Canadian Immigration Consultancy.</br>
+        AbImmigration.cic.ca | Downtown Toronto, Canada </br>
+          © Copyright 2026 AbImmigration.cic.ca. All Rights Reserved
     </div>
 </footer>
 
